@@ -1,7 +1,7 @@
 import React from "react";
 import { Link } from "react-router";
 
-import Navbar from "../components/Navbar.js";
+import NavbarTop from "../components/Navbar.js";
 import Footer from "../components/Footer.js";
 
 export default class Layout extends React.Component {
@@ -14,7 +14,7 @@ export default class Layout extends React.Component {
 
 		return (
 			<div>
-				<Navbar location={location} />
+				<NavbarTop location={location} />
 					<div class="container theme-showcase" role="main" style={containerStyle}>
 						<h1>Harry News</h1>
 						{this.props.children}

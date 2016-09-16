@@ -1,7 +1,9 @@
 import React from "react";
 import { IndexLink, Link } from "react-router";
+import {Navbar, Nav, NavItem, NavDropdown, DropdownButton, MenuItem, CollapsibleNav} from 'react-bootstrap';
+import { LinkContainer } from 'react-router-bootstrap';
 
-export default class Navbar extends React.Component {
+export default class NavbarTop extends React.Component {
 	render() {
 		//console.log(this.props.location.pathname);
 
@@ -11,34 +13,27 @@ export default class Navbar extends React.Component {
 	    const settingsClass = this.props.location.pathname.match(/^\/settings/) ? "active" : "";
 
 		return (
-
-		    <div class="navbar navbar-inverse navbar-fixed-top" role="navigation">
-		      <div class="container">
-		        <div class="navbar-header">
-		          <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
-		            <span class="sr-only">Toggle navigation</span>
-		            <span class="icon-bar"></span>
-		            <span class="icon-bar"></span>
-		            <span class="icon-bar"></span>
-		          </button>
-		          <a class="navbar-brand" href="#">Harry theme</a>
-		        </div>
-		        <div id="navbar" class="navbar-collapse collapse">
-		          <ul class="nav navbar-nav">
-		            <li class={featuredClass}>
-		            	<IndexLink to="/">Featured</IndexLink>
-		            </li>
-		            <li class={archivesClass}>
-		            	<Link to="archives">Archives</Link>
-		            </li>
-		            <li class={settingsClass}>
-		            	<Link to="settings">Settings</Link>
-		            </li>
-		          </ul>
-		        </div>
-		      </div>
-		    </div>
-		    
+			  <Navbar inverse>
+			    <Navbar.Header>
+			      <Navbar.Brand>
+			        <a href="#">Harry Theme</a>
+			      </Navbar.Brand>
+			      <Navbar.Toggle />
+			    </Navbar.Header>
+			    <Navbar.Collapse>
+			      <Nav>
+			      	<LinkContainer to="/home">
+			        	<NavItem eventKey={1}>Featured</NavItem>
+			        </LinkContainer>
+			        <LinkContainer to="/archives">
+			        	<NavItem eventKey={2}>Archives</NavItem>
+			        </LinkContainer>
+			        <LinkContainer to="/settings">
+			        	<NavItem eventKey={3}>Settings</NavItem>
+			        </LinkContainer>
+			      </Nav>
+			    </Navbar.Collapse>
+			  </Navbar>
 		);
 	}
 }
