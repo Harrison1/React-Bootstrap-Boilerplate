@@ -1,7 +1,7 @@
 import React from "react";
 import { IndexLink, Link } from "react-router";
 import {Navbar, Nav, NavItem, NavDropdown, DropdownButton, MenuItem, CollapsibleNav} from 'react-bootstrap';
-import { LinkContainer } from 'react-router-bootstrap';
+import { LinkContainer, IndexLinkContainer } from 'react-router-bootstrap';
 
 export default class NavbarTop extends React.Component {
 	render() {
@@ -22,9 +22,9 @@ export default class NavbarTop extends React.Component {
 			    </Navbar.Header>
 			    <Navbar.Collapse>
 			      <Nav>
-			      	<LinkContainer to="/home">
+			      	<IndexLinkContainer to="/">
 			        	<NavItem eventKey={1}>Featured</NavItem>
-			        </LinkContainer>
+			        </IndexLinkContainer>
 			        <LinkContainer to="/archives">
 			        	<NavItem eventKey={2}>Archives</NavItem>
 			        </LinkContainer>
